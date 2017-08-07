@@ -1,4 +1,9 @@
 ---
+layout: post
+comments: true
+title:  "Test for test"
+excerpt: "I'll test before the fest"
+date:   2017-08-07
 mathjax: true
 ---
 
