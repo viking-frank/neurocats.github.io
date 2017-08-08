@@ -55,15 +55,16 @@ tools i.e. matrix computation, sparse computation.
 Tensorflow is a c++ library. In detail think of tensorflow as an API. It is 
 fast, can comunicate with the GPU and can therefore parallelize computations.
 Furthermore tensorflow has a deeper understanding of your computation. It
-is able to derive and knows which part of the computation can work in 
-parallel. More see below.
+is able to compute a symbolical derivative of a mathematical function and 
+knows which part of the computation can work in parallel.  
+We will elaborate on that in more detail in this tutorial.
 
 ### What the fuck?
 What we are doing basically is using pythons power of integrating systems 
 with the tensorflow library. We are communicating with the GPU over 
 tensorflow controlled by python and therefore illuminating pythons bad habits.
 
-### similarities
+### Similarities
 
 #### arrays and tensors
 We will begin with the basic tools you need. **Tensors/Arrays**.
