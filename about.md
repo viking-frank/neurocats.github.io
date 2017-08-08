@@ -3,4 +3,6 @@ layout: page
 title: About
 permalink: /about/
 ---
-We are a young startup focusing on Reinforcement Learning and Deep Neural Networks.
+I isomorphically transform code.
+
+Don't believe it. Contact: **fg@neurocat.ai**
