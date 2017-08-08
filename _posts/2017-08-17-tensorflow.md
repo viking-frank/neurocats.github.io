@@ -9,30 +9,59 @@ mathjax: true
 
 # Tensorflow 101
 
-## tensorflow vs. numpy
+## Introduction
+We will elaborate the different approaches on programming python, numpy and 
+tensorflow. We won't be a beginner tutorial that talks about variable 
+initialization, loops, function, classes, library calls and hello world.
+
+I want to give a framework on how to think about the approaches such that 
+everybody can use the provides tools on their own.
+
+Please learn how to read documentations and finding tools by your own. Think
+about your problems and search for the tools that are needed and not the 
+other way round. Please refer to the following documentations:
+- [python docs](https://docs.python.org/3/)
+- [numpy docs](https://docs.scipy.org/doc/)
+- [tensorflow docs](https://www.tensorflow.org/api_docs/python/)
+
+## Why are we doing what we are doing?
 
 ### What is python?
 > Python is a programming language that lets you **work quickly** and 
 **integrate systems** more effectively. 
- **- python.org**
- 
+**- python.org**
+
+This just means **python** is
+- multi-purpose, especially cross-platform and
+- can easily combine different systems.
+
+In short: It can do everything but nothing right. On the contrary it is slow 
+and hard to parallelize, because it doesn't live deep inside the system like
+c++ etc.
 ### What is numpy?
 > NumPy is the fundamental **package** for scientific computing with Python. 
-  **- numpy.org**
+**- numpy.org**
+
+Python is loved by the scientific community because of the variety of 
+scientific computing packages i.e. **numpy**, scipy. This gives the 
+developer the beauty of python syntax by easily providing scientific 
+tools i.e. matrix computation, sparse computation.
+ 
 
 ### What is tensorflow?
 > An open-source software **library** for Machine Intelligence.
-  **- tensorflow.org**
+**- tensorflow.org**
 
-Explanation of the different of the programming approach.
-We will skip variable initialization, loops, functions and library calls. I 
-want to give the bridge what we are doing and how we are doing it. The tools
-you have to find yourself. We have infinite possibilities thats why I never 
-can cover the whole tensorflow, because of that it is important that you know 
-the documentation and how to use it
-LINK TO NUMPY DOC
-LINK TO TENSORFLOW DOC
-BEISPIELANWENDUNG IMMER VON BENUTZUNG!
+Tensorflow is a c++ library. In detail think of tensorflow as an API. It is 
+fast, can comunicate with the GPU and can therefore parallelize computations.
+Furthermore tensorflow has a deeper understanding of your computation. It
+is able to derive and knows which part of the computation can work in 
+parallel. More see below.
+
+### What the fuck?
+What we are doing basically is using pythons power of integrating systems 
+with the tensorflow library. We are communicating with the GPU over 
+tensorflow controlled by python and therefore illuminating pythons bad habits.
 
 ### similarities
 
