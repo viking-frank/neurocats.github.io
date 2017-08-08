@@ -3,4 +3,6 @@ layout: page
 title: About
 permalink: /about/
 ---
-We are a young startup focusing on Reinforcement Learning and Deep Neural Networks.
+Berlin startup mastering Reinforcement Learning and Deep Learning.
+
+Contact: miau@neurocat.ai
