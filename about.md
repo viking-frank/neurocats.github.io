@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-Florens Greßner: mathematician, computer native, user of natural neural network.
+Florens Greßner: computer native, mathematician, neurocat member.
 
 > I isomorphically transform code.
 
