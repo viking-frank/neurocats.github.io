@@ -64,19 +64,19 @@ What we are doing basically is using pythons power of integrating systems
 with the tensorflow library. We are communicating with the GPU over 
 tensorflow controlled by python and therefore illuminating pythons bad habits.
 
-### Similarities
+## Basic tools
 
-#### arrays and tensors
-We will begin with the basic tools you need. **Tensors/Arrays**.
+### arrays/tensors
+You will always need **Tensors/Arrays**. So let's start with the smalles 
+non-trivial example of rank 2. Or: A Matrix.
 
-We will create a numpy array of dimension 2 and a tensor of rank 2
 ```python
-import tensorflow as tf
 import numpy as np
+import tensorflow as tf
 
 # create a matrix
 npMatrix = np.zeros(shape=(3, 3), dtype=np.float32)
-tfMatrix = tf.zeros(shape=(3, 3), dtype=tf.float32)
+tfMatrix = tf.zeros(shape=(3, 3), dtype=tf.float32, name="tfMatrix")
 
 # print out results
 print("Numpy Matrix:\n", npMatrix, "\n")
@@ -102,6 +102,13 @@ Tensorflow node value:
   [ 0.  0.  0.]
   [ 0.  0.  0.]] 
 ```
+
+As Watson would perceive the Tensorflow node is completely different to its 
+value. How can that make sense?
+
+To make that clear please analyse the outcome of the next example.
+
+
 
 # Notes
 we still work in python, but we are using tensorflow (C++) library (schneller
