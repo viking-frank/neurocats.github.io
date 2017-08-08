@@ -186,6 +186,7 @@ tfResult = tf.add(tfMatrix, tfMatrix2, name="tfResult")
 ```
 Computation graph:  
 ![ex_II](https://github.com/f37/f37.github.io/blob/master/assets/tensorflow/ex_II.png?raw=true)
+
 2. Execute the actual computation in a tensorflow session.
 ```python
 # Starting the session
