@@ -82,7 +82,7 @@ tfMatrix = tf.zeros(shape=(3, 3), dtype=tf.float32, name="tfMatrix")
 print("Numpy Matrix:\n", npMatrix, "\n")
 print("Tensorflow node:\n", tfMatrix, "\n")
 
-# or maybe in the right way
+# or maybe in the right way for tensorflow
 with tf.Session() as sess:
     node = sess.run(tfMatrix)
     print("Tensorflow node value:\n", node, "\n")
@@ -106,24 +106,30 @@ Tensorflow node value:
 As Watson would perceive the Tensorflow node is completely different to its 
 value. How can that make sense?
 
-To make that clear please analyse the outcome of the next example.
+To make that clear please analyse the outcome of the next example. We will 
+now add up 2 matrices.
 
 ```python
-# create a matrix
+import numpy as np
+import tensorflow as tf
+
+# create the first matrix
 npMatrix = np.zeros(shape=(3, 3), dtype=np.float32)
 tfMatrix = tf.constant(npMatrix, dtype=tf.float32, name="tfMatrix")
 
+# create the second matrix
 npMatrix2 = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1]], dtype=np.float32)
 tfMatrix2 = tf.constant(npMatrix2, dtype=tf.float32, name="tfMatrix2")
 
+# add them up
 npResult = np.add(npMatrix, npMatrix2)
 tfResult = tf.add(tfMatrix, tfMatrix2, name="tfResult")
 
-# print out results
+# Print out the sum
 print("Numpy result:\n", npResult, "\n")
 print("Tensorflow result node:\n", tfResult, "\n")
 
-# or maybe in the right way
+# or maybe in the right way for tensorflow
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
     writer = tf.summary.FileWriter('./graphs', sess.graph)
@@ -149,6 +155,9 @@ Tensorflow result:
 ```
 Computation graph:  
 ![ex_II](https://github.com/f37/f37.github.io/blob/master/assets/tensorflow/ex_II.png?raw=true)
+
+#### What happened?
+
 
 # Notes
 we still work in python, but we are using tensorflow (C++) library (schneller
