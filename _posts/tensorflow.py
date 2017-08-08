@@ -1,6 +1,8 @@
 import tensorflow as tf
 import numpy as np
 
+print("Testlauf I", "\n\n")
+
 # create a matrix
 npMatrix = np.zeros(shape=(3, 3), dtype=np.float32)
 tfMatrix = tf.zeros(shape=(3, 3), dtype=tf.float32)

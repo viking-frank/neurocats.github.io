@@ -10,6 +10,20 @@ mathjax: true
 # Tensorflow 101
 
 ## tensorflow vs. numpy
+
+### What is python?
+> Python is a programming language that lets you **work quickly** and 
+**integrate systems** more effectively. 
+ **- python.org**
+ 
+### What is numpy?
+> NumPy is the fundamental **package** for scientific computing with Python. 
+  **- numpy.org**
+
+### What is tensorflow?
+> An open-source software **library** for Machine Intelligence.
+  **- tensorflow.org**
+
 Explanation of the different of the programming approach.
 We will skip variable initialization, loops, functions and library calls. I 
 want to give the bridge what we are doing and how we are doing it. The tools
@@ -23,7 +37,7 @@ BEISPIELANWENDUNG IMMER VON BENUTZUNG!
 ### similarities
 
 #### arrays and tensors
-We will begin with the basic tools you need. Tensors/Arrays
+We will begin with the basic tools you need. **Tensors/Arrays**.
 
 We will create a numpy array of dimension 2 and a tensor of rank 2
 ```python
