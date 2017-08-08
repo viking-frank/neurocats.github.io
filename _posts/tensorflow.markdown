@@ -19,4 +19,8 @@ import tensorflow
 
 import numpy
 ```
-soso
+
+### similarities
+
+#### arrays and tensors
+We will create a numpy array of dimension 2 and a tensor of rank 2
