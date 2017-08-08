@@ -3,8 +3,8 @@ title: Neurocat blog
 email: 
 description: "Artificial Intelligence."
 baseurl: ""
-url: "http://f37.github.io"
-github_username:  f37
+url: "http://neurocats.github.io"
+github_username:  neurocats
 
 # Build settings
 markdown: kramdown
