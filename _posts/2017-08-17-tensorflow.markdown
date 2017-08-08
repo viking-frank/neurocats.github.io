@@ -12,7 +12,7 @@ mathjax: true
 ## tensorflow vs. numpy
 Explanation of the different of the programming approach.
 
-```markdown
+```python
 import tensorflow
 
 # vs.
