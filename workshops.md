@@ -15,4 +15,4 @@ to: Research, Development & Management group
 28/08/17
 
 
-Please Sign in for a workshop by contacting miau@neurocat.ai
+Feel free to Sign in for a workshop by contacting miau@neurocat.ai.
