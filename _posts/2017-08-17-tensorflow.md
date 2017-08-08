@@ -135,6 +135,10 @@ with tf.Session() as sess:
     writer = tf.summary.FileWriter('./graphs', sess.graph)
     node = sess.run(tfResult)
     print("Tensorflow result:\n", node, "\n")
+    
+    # for deeper understanding
+    sumand1, sumand2 = sess.run([tfMatrix, tfMatrix2])
+    print("Summands:\n", "first:\n", sumand1, "second:\n", summand2)
 writer.close()
 ```
 Output:
@@ -152,12 +156,56 @@ Tensorflow result:
  [[ 1.  0.  0.]
   [ 0.  1.  0.]
   [ 0.  0.  1.]] 
+  
+Summands:
+ first:
+  [[ 0.  0.  0.]
+   [ 0.  0.  0.]
+   [ 0.  0.  0.]] 
+ second:
+  [[ 1.  0.  0.]
+   [ 0.  1.  0.]
+   [ 0.  0.  1.]]
+
 ```
 Computation graph:  
 ![ex_II](https://github.com/f37/f37.github.io/blob/master/assets/tensorflow/ex_II.png?raw=true)
 
 #### What happened?
+We understood that numpy is just able to print out any result while tensorflow
+needs some special treatment. So we need to understand why tensorflow does 
+what tensorflow does and why it is practicable.
 
+Tensorflow has two workflows.
+1. Building the computation graph.
+```python
+# Summand
+tfMatrix = tf.constant(npMatrix, dtype=tf.float32, name="tfMatrix")
+# Summand
+tfMatrix2 = tf.constant(npMatrix2, dtype=tf.float32, name="tfMatrix2")
+# Sum
+tfResult = tf.add(tfMatrix, tfMatrix2, name="tfResult")
+```
+2. Execute the actual computation in a tensorflow session.
+```python
+# Starting the session
+with tf.Session() as sess:
+    # Initialize all variables
+    sess.run(tf.global_variables_initializer())
+    # Providing the results in tensorboard (a visualization tool)
+    writer = tf.summary.FileWriter('./graphs', sess.graph)
+    # Calculate the value of a certain node
+    node = sess.run(tfResult)
+    
+    # calculate the value of any node of the computation graph
+    sumand1, sumand2 = sess.run([tfMatrix, tfMatrix2])
+writer.close()
+```
+
+As seen in the picture of the computation graph. Tensorflow has 3 nodes in 
+the computation graph. We can ask for the value in any step of the calculation.
+Tensorflow will calculate it over a C++ API, not with python like in numpy 
+case.
 
 # Notes
 we still work in python, but we are using tensorflow (C++) library (schneller
