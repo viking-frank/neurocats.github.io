@@ -168,8 +168,6 @@ Summands:
    [ 0.  0.  1.]]
 
 ```
-Computation graph:  
-![ex_II](https://github.com/f37/f37.github.io/blob/master/assets/tensorflow/ex_II.png?raw=true)
 
 #### What happened?
 We understood that numpy is just able to print out any result while tensorflow
@@ -186,6 +184,8 @@ tfMatrix2 = tf.constant(npMatrix2, dtype=tf.float32, name="tfMatrix2")
 # Sum
 tfResult = tf.add(tfMatrix, tfMatrix2, name="tfResult")
 ```
+Computation graph:  
+![ex_II](https://github.com/f37/f37.github.io/blob/master/assets/tensorflow/ex_II.png?raw=true)
 2. Execute the actual computation in a tensorflow session.
 ```python
 # Starting the session
