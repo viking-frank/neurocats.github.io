@@ -108,7 +108,47 @@ value. How can that make sense?
 
 To make that clear please analyse the outcome of the next example.
 
+```python
+# create a matrix
+npMatrix = np.zeros(shape=(3, 3), dtype=np.float32)
+tfMatrix = tf.constant(npMatrix, dtype=tf.float32, name="tfMatrix")
 
+npMatrix2 = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1]], dtype=np.float32)
+tfMatrix2 = tf.constant(npMatrix2, dtype=tf.float32, name="tfMatrix2")
+
+npResult = np.add(npMatrix, npMatrix2)
+tfResult = tf.add(tfMatrix, tfMatrix2, name="tfResult")
+
+# print out results
+print("Numpy result:\n", npResult, "\n")
+print("Tensorflow result node:\n", tfResult, "\n")
+
+# or maybe in the right way
+with tf.Session() as sess:
+    sess.run(tf.global_variables_initializer())
+    writer = tf.summary.FileWriter('./graphs', sess.graph)
+    node = sess.run(tfResult)
+    print("Tensorflow result:\n", node, "\n")
+writer.close()
+```
+Output:
+
+```
+Numpy result:
+ [[ 1.  0.  0.]
+  [ 0.  1.  0.]
+  [ 0.  0.  1.]] 
+
+Tensorflow result node:
+ Tensor("tfResult:0", shape=(3, 3), dtype=float32) 
+
+Tensorflow result:
+ [[ 1.  0.  0.]
+  [ 0.  1.  0.]
+  [ 0.  0.  1.]] 
+```
+Computation graph:  
+![ex_II](https://github.com/f37/f37.github.io/blob/master/assets/tensorflow/ex_II.png?raw=true)
 
 # Notes
 we still work in python, but we are using tensorflow (C++) library (schneller
