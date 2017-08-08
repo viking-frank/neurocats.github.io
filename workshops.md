@@ -13,3 +13,6 @@ to: Research, Development & Management group
 - **Introduction to the Blockchain** by Frank Selensky  
 to: Research, Development & Management group  
 28/08/17
+
+
+Please Sign in for a workshop by contacting miau@neurocat.ai
