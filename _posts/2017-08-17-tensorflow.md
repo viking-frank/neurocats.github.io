@@ -203,10 +203,19 @@ with tf.Session() as sess:
 writer.close()
 ```
 
-As seen in the picture of the computation graph. Tensorflow has 3 nodes in 
-the computation graph. We can ask for the value in any step of the calculation.
-Tensorflow will calculate it over a C++ API, not with python like in numpy 
-case.
+As seen in the picture of the computation graph. You have 3 nodes in 
+the computation graph. We can ask for the value in any step of the 
+calculation with a tensorflow session. Tensorflow will calculate it over a 
+C++ API, not with python like in numpy case. What features that brings we 
+will see in the next section.
+
+### Advanced Features
+#### Derivation
+#### GPU contact
+Image with and without, maybe time comparison.
+#### Building neural net
+#### Visual debugging
+Give example.
 
 # Notes
 we still work in python, but we are using tensorflow (C++) library (schneller
