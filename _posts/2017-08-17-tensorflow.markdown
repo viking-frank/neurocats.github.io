@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title:  "Tensorflow 101"
-excerpt: "Indroduction to Tensorflow"
+excerpt: "Introduction to tensorflow"
 date:   2017-08-17
 mathjax: true
 ---
@@ -11,3 +11,11 @@ mathjax: true
 
 ## tensorflow vs. numpy
 Explanation of the different of the programming approach.
+
+'''
+import tensorflow
+
+# vs.
+
+import numpy
+'''
