@@ -251,7 +251,15 @@ impossible for pure python.
 
 ### Tensorboard
 I want to show you how you plot graphs with tensorboard (important for the 
-lossfunction or basic analysis of you model). 
+lossfunction or basic analysis of you model). However I don't want to bore 
+you. So we will explore tensorflows possibility to create derivations for a 
+mathematical formula.
+
+Let's go to a tensor of rank zero. A scalar.
+
+Everybody knows the derivation of $x^{2}+1& we all know the chain rule and 
+the basic patterns of building a derivation.
+
 
 ### Advanced Features
 #### Derivation
