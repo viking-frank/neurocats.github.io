@@ -2,9 +2,9 @@
 layout: post
 comments: true
 title:  "Introduction to Tensorflow - 03 Basic Neural Network"
-excerpt: "While showing how build to a simple neural network with tensorflow I 
-want to give the reader a playful handling with namescopes and show how to 
-make sense of your weight evolution with histograms."
+excerpt: "While showing how to build to a simple neural network with 
+tensorflow I want to give the reader a playful handling with namescopes and 
+show how to make sense of your weight evolution with histograms."
 date:   2017-08-17
 mathjax: true
 ---
