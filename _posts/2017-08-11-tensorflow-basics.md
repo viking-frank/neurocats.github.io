@@ -5,7 +5,7 @@ title:  "Introduction to Tensorflow - 01 Basics"
 excerpt: "While giving an overview for python, numpy and tensorflow I want 
 to create a basic understanding of tensorflows graph representation for the 
 reader."
-date:   2017-08-17
+date:   2017-08-11
 mathjax: true
 ---
 
