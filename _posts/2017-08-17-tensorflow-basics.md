@@ -1,13 +1,15 @@
 ---
 layout: post
 comments: true
-title:  "Tensorflow 101"
-excerpt: "Introduction to tensorflow"
+title:  "Introduction to Tensorflow - 01 Basics"
+excerpt: "While giving an overview for python, numpy and tensorflow I want 
+to create a basic understanding of tensorflows graph representation for the 
+reader."
 date:   2017-08-17
 mathjax: true
 ---
 
-# Tensorflow 101
+# Tensorflow basics
 
 ## Introduction
 We will elaborate the different approaches on programming python, numpy and 
