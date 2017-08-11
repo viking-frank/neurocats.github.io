@@ -48,4 +48,8 @@ def ex_II():
 
 
 if __name__ == "__main__":
-    pass
+    print("Welcome to my tutorial.")
+    print("Look at my first example")
+    ex_I()
+    print("Look at my second example")
+    ex_II()
