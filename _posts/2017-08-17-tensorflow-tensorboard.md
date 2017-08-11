@@ -190,8 +190,9 @@ Our nodes seem to represent $x ^{2} + 1$ and $2x$
 
 You can also start your
 ```shell
-florens@neurocat:~codefolder$  cd lulu
-
+florens@neurocat:~/bla/codefolder$ tensorboard --logdir="./graphs"
+Starting TensorBoard b'47' at http://0.0.0.0:6006
+(Press CTRL+C to quit)
 ```
 
 
