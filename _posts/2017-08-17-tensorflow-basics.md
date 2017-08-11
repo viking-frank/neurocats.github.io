@@ -225,7 +225,7 @@ tfResult = tf.add(tfMatrix, tfMatrix2, name="tfResult")
 ```
 Notice that every seemingly variable initialization step is a birth of a 
 node in the computation graph. You feed it with the properties/parameter, 
-even a name.
+even with a name.
 
 2. Execute the actual computation in a tensorflow session.
 ```python
@@ -246,12 +246,14 @@ Computation graph:
 ![ex_II](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/ex_II.png)
 
 As seen in the picture of the computation graph you have created 3 nodes 
-(summand, summand, sum). We can ask for every assigned value for that given 
-computation in every node. Tensorflow will calculate it via C++ API, not 
-with native python like in the numpy case.
+(summand, summand, sum) if you ignore the `init` node . We can evaluate every 
+assigned value of a node given the current computation. Tensorflow will 
+calculate it via C++ API, not with native python like in the numpy case.
 
 I created that graph with tensorboard. Its a tool that converts
-so called tensorflow summaries into a visualization. With that there arises 
-namescoping, building summaries etc. I will elaborate on that in the next 
-section while I show you how tensorflow can compute symbolic derivations, 
-impossible for pure python.
+so called tensorflow summaries into a visualization. With that there arise 
+more new definitions like namescoping, building summaries etc. I will 
+elaborate on that in the next tutorial while I show you how tensorflow can 
+compute symbolic derivations, impossible for pure python.
+
+Have a great code. See you in the next tutorial.
