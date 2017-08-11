@@ -13,7 +13,7 @@ mathjax: true
 ## Introduction
 
 I want to show you how you plot graphs with tensorboard (important for the 
-lossfunction or basic analysis of you model e.g. weight distribution). 
+loss function or basic analysis of you model e.g. weight distribution). 
 However I don't want to bore you. So we will explore tensorflows possibility
 to create derivations for a mathematical formula.
 
@@ -27,19 +27,19 @@ reconstruct the chain rule over the graph structure, similar to you. Therefore
 derivations are an easy task for it.
 
 ## Why visualization?
-You are a human being. You don't live inside code, you live insight a 
-hallucination of your environment. When you build a huge computation graph 
-it is sometimes easier to just look if every connection is established 
-visually then to search for a mistake in your code. Our visual processing is
-way faster in that manner. On top of that its very cool to have a build in 
-visualisation tool without calling e.g. matplotlib. There all your needed 
-data can be provided e.g. lossfunction, weight density, or embeddings from 
-your trainingdata. You get a more efficient understanding of your model 
-reviewing your code from a second perspective.
+You are a human being. You don't live inside code, but you are a highspeed 
+processor for visual input. When you build a huge computation graph it is 
+often easier to just look if every connection in the graph is established 
+like you wanted visually then to search for a mistake in your code. Our 
+visual processing is way faster in that manner. On top of that its very cool
+to have a build in visualisation tool without calling e.g. matplotlib. There
+all your needed data can be provided e.g. lossfunction, weight density, or 
+embeddings from your trainingdata. You get a more efficient understanding 
+of your model reviewing your code from a second perspective.
 
 Please don't confuse it. I also code examples that use matplotlib. 
 Tensorboard is not always the best descision just because it's build in. 
-Please always use the tools that fit best for your purpose.
+Always use the tools that fit best for your purpose.
 
 
 ### Advanced Features
@@ -53,3 +53,11 @@ Give example.
 Always 
 trying to find out why numpy isn't able to letting tensors flow without 
 boundarys.
+
+##Knoten über namen finden
+## Advanced Namescoping
+## Save Restore
+## Mystery Layer
+## Partially connected layer
+## Loops over namescopes, play around maybe create nice graph pattern 
+without use
