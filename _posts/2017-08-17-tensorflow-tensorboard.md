@@ -183,18 +183,10 @@ summary to out tensorboard writer. Note that I multiplied our second
 parameter for the summary with 1000. Thats just convenience because a 
 integer it needed.
 
-Take a look at the graphs. Seems like everything turned out fine:
-$x ^{2} + 1$
+Take a look at the graphs. Seems like everything turned out fine: 
+Our nodes seem to represent $x ^{2} + 1$ and $2x$
 
-![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_f.png) 
-
-$2x$
-
-![dx](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_dx.png)
-
-![der1](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_1.png)
-bla bla blub
-![der2](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_2.png)
+![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_f.png) ![dx](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_dx.png)
 
 ### Advanced Features
 #### Derivation
