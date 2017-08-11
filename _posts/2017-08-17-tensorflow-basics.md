@@ -20,7 +20,7 @@ world.
 I want to give you a framework on how to think about the different approaches 
 such that you can use the provided tools on your own.
 
-Please learn how to read documentations and finding all tools needed. Think
+Learn how to read documentations and finding all tools needed. Think
 about your problems and search for the gadgets that are needed for 
 solving the problem. Don't think about your known tools and try to figure 
 out a solution with static knowledge. You may be successful upto a certain 
@@ -36,11 +36,12 @@ Please refer to the following documentations:
 ![python](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/numpy.jpg)
 ![python](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/tensorflow.png)
 
-We first have to make clear, what is there for mathematical programming. 
+We first have to find out what you can use for mathematical programming 
+especially for building AI Software.   
 What is used for which purpose? Which Problems are more efficiently solved 
 with which tool?
 
-### What is python? 
+### Python? 
 > Python is a programming language that lets you **work quickly** and 
 **integrate systems** more effectively. 
 **- python.org**
@@ -53,7 +54,7 @@ In short: It can do everything everywhere but nothing right or in the most
 efficient way. It is slow and hard to parallelize, because it doesn't live 
 deep inside the system like C++ etc. However it is elegant and easy to use.
 
-### What is numpy?
+### Numpy?
 > NumPy is the fundamental **package** for scientific computing with Python. 
 **- numpy.org**
 
@@ -63,7 +64,7 @@ developer the beauty of using python syntax by easily providing mathematical
 tools e.g. matrix computation.
  
 
-### What is tensorflow?
+### Tensorflow?
 > An open-source software **library** for Machine Intelligence.
 **- tensorflow.org**
 
@@ -75,7 +76,7 @@ derivative of a mathematical function and knows which part of the
 computation can work in parallel.  
 We will elaborate on that in more detail in this tutorial.
 
-### What the fuck?
+### Conclusion?
 What we are doing basically is using pythons power of elegantly integrating 
 systems with the tensorflow library (via python API). We are communicating 
 with the GPU over tensorflow controlled by python. We are combining easy to 
