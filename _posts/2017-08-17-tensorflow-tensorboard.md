@@ -41,6 +41,9 @@ Please don't confuse it. I also code examples that use matplotlib.
 Tensorboard is not always the best descision just because it's build in. 
 Always use the tools that fit best for your purpose.
 
+## Symbolic derivation
+![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_f.png) ![dx](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_dx.png)
+
 
 ### Advanced Features
 #### Derivation
