@@ -29,3 +29,4 @@ with tf.Session() as sess:
                                      })
         writer.add_summary(summary, i*1000)
 writer.close()
+picruere
