@@ -43,6 +43,128 @@ not always the best descision just because it's build in. Always use the
 tools that fit best for your purpose.
 
 ## Symbolic derivation
+Let's make a symbolic derivation together and learn the basics of 
+namescoping and tensorboard.
+
+We will get warm with importing everything we need and getting to know a 
+tensorflow placeholder.
+```python
+import tensorflow as tf
+import numpy as np
+
+# initialize a placeholder. It can be feed with values in a session
+x = tf.placeholder(dtype=tf.float32, shape=[1], name="x")
+```
+A placeholder is also a node in the computation graph. It gives the 
+developer the possibility to feed it values that propagate over the whole 
+graph.
+
+```python
+# create a graph representation of x^2+1
+with tf.name_scope("xPow2Plus1"):
+```
+We are creating a group of nodes with that command. I want to build a graph 
+representation of $x ^{2} + 1$. Like you can imagine that is not just one 
+node in a computation graph. The more nodes the graph has the more it make 
+sense to group some of its node. It makes sense to group that node and makes
+the graph easier to read.
+
+The whole group would look like this.
+
+```python
+# create a graph representation of x^2+1
+with tf.name_scope("xPow2Plus1"):
+    # square x to get x^2
+    xPow2 = tf.square(x, name="xPow2")
+
+    # create a 1 by initializing a constant feed with a numpy array
+    npOne = np.array([1], dtype=np.float32)
+    tfOne = tf.constant(npOne, dtype=tf.float32, name="one")
+
+    # add both up to create x^2 + 1
+    xPow2Plus1 = tf.add(xPow2, tfOne, name="xPow2Plus1")
+```
+![derx21](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_x21.png)
+
+Ignore the summary node for now. This creates a group of nodes looking like 
+that in tensorboard. The names match to the name parameter in each node 
+initialization.
+
+The code only completes with a preparation for later summarizing the value 
+of the resulting node.
+
+```python
+    # establish the possibility of summarising
+    with tf.name_scope("summary"):
+        # reduce to scalar
+        xPow2Plus1 = tf.reduce_mean(xPow2Plus1)
+        # summarise scalar
+        tf.summary.scalar('f', xPow2Plus1)
+
+```
+Nothing special, easy syntax.
+
+We are doing the same with the derivation. Keeping the graph representation 
+hidden for now.
+```python
+# create a  graph representation that is wished to be 2x
+with tf.name_scope("2x"):
+    # compute gradient computation graph
+    grad = tf.gradients(xPow2Plus1, x, name="2x")
+
+    # establish possibility of summarizing
+    with tf.name_scope("summary"):
+        # reduce to scalar
+        grad = tf.reduce_mean(grad[0])
+        # summarise scalar
+        tf.summary.scalar('dfdx', grad)
+```
+As we see tensorflow has a build in gradient computation. Taking the node to
+be differentiated and the node to be used for differentiation as input it 
+returns the node for the desired gradient
+![der1](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_1.png)
+
+In the end we have to make out summary routine again. We have now created a 
+graph that has a feedable node `x` and two nodes `x^2+1` and `2x` where we 
+want to know the resulting outcome from. Thats why we created summary nodes.
+
+In more detail:
+![der1](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_2.png)
+
+`x^2+1` was reviewed above and `2x` makes some woodo magic with `x^2+1`. It 
+seems to make sense.
+
+Only thing left is to put everything in a tensorflow session and evaluate 
+the assinged value of the nodes when we feed x with a test set.  
+Thats exactly what we are doing. Because after we formally merged out 
+summary nodes, for usability purpose...
+
+```python
+# for tensorboard usability just merge all summaries into one node
+merged = tf.summary.merge_all()
+```
+... we have our head free for a tensorflow session
+```python
+
+```
+
+```python
+
+```
+
+```python
+
+```
+
+```python
+
+```
+
+```python
+
+```
+
+
 ![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_f.png) ![dx](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_dx.png)
 
 ![der1](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_1.png)
