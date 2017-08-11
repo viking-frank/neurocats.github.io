@@ -40,7 +40,7 @@ We first have to make clear, what is there for mathematical programming.
 What is used for which purpose? Which Problems are more efficiently solved 
 with which tool?
 
-### What is python?
+### What is python? 
 > Python is a programming language that lets you **work quickly** and 
 **integrate systems** more effectively. 
 **- python.org**
