@@ -236,7 +236,7 @@ with tf.Session() as sess:
 writer.close()
 ```
 Computation graph:  
-![ex_II](https://github.com/f37/f37.github.io/blob/master/assets/tensorflow/ex_II.png)
+![ex_II](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/ex_II.png)
 
 As seen in the picture of the computation graph you have created 3 nodes 
 (summand, summand, sum). We can ask for every assigned value for that given 
@@ -246,9 +246,12 @@ with native python like in the numpy case.
 I created that graph with tensorboard. Its a tool that converts
 so called tensorflow summaries into a visualization. With that there arises 
 namescoping, building summaries etc. I will elaborate on that in the next 
-section while I show you that tensorflow can compute symbolic derivations, 
+section while I show you how tensorflow can compute symbolic derivations, 
 impossible for pure python.
 
+### Tensorboard
+I want to show you how you plot graphs with tensorboard (important for the 
+lossfunction or basic analysis of you model). 
 
 ### Advanced Features
 #### Derivation
