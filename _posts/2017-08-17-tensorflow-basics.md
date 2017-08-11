@@ -41,20 +41,21 @@ especially for building AI Software.
 What is used for which purpose? Which Problems are more efficiently solved 
 with which tool?
 
-### Python? 
+### Python
 > Python is a programming language that lets you **work quickly** and 
 **integrate systems** more effectively. 
 **- python.org**
 
-This just means **python** is
+This just means that **python** is
 - multi-purpose, (especially cross-platform) and
 - can easily combine different systems.
 
 In short: It can do everything everywhere but nothing right or in the most 
 efficient way. It is slow and hard to parallelize, because it doesn't live 
-deep inside the system like C++ etc. However it is elegant and easy to use.
+deep inside the system like e.g. C++. However it is elegant and easy to 
+use.
 
-### Numpy?
+### Numpy
 > NumPy is the fundamental **package** for scientific computing with Python. 
 **- numpy.org**
 
@@ -64,7 +65,7 @@ developer the beauty of using python syntax by easily providing mathematical
 tools e.g. matrix computation.
  
 
-### Tensorflow?
+### Tensorflow
 > An open-source software **library** for Machine Intelligence.
 **- tensorflow.org**
 
@@ -76,7 +77,7 @@ derivative of a mathematical function and knows which part of the
 computation can work in parallel.  
 We will elaborate on that in more detail in this tutorial.
 
-### Conclusion?
+### Conclusion
 What we are doing basically is using pythons power of elegantly integrating 
 systems with the tensorflow library (via python API). We are communicating 
 with the GPU over tensorflow controlled by python. We are combining easy to 
