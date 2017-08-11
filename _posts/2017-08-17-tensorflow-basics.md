@@ -12,16 +12,21 @@ mathjax: true
 # Tensorflow basics
 
 ## Introduction
-We will elaborate the different approaches on programming python, numpy and 
-tensorflow. We won't be a beginner tutorial that talks about variable 
-initialization, loops, function, classes, library calls and hello world.
+We will explore the different approaches on programming python, numpy and 
+tensorflow. This won't be a beginner tutorial that talks about variable 
+initialization, loops, function, classes, library calls and saying hello to a
+world.
 
-I want to give a framework on how to think about the approaches such that 
-everybody can use the provided tools on their own.
+I want to give you a framework on how to think about the different approaches 
+such that you can use the provided tools on your own.
 
-Please learn how to read documentations and finding tools by your own. Think
-about your problems and search for the tools that are needed and not the 
-other way round. Please refer to the following documentations:
+Please learn how to read documentations and finding all tools needed. Think
+about your problems and search for the gadgets that are needed for 
+solving the problem. Don't think about your known tools and try to figure 
+out a solution with static knowledge. You may be successful upto a certain 
+point. But your code can never be efficient and most importantly - beautiful. 
+**Own your code!**  
+Please refer to the following documentations:
 - [python docs](https://docs.python.org/3/)
 - [numpy docs](https://docs.scipy.org/doc/)
 - [tensorflow docs](https://www.tensorflow.org/api_docs/python/)
