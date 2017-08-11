@@ -103,10 +103,7 @@ Never forget. You are building a graph. When you want to evaluate a variable
 such a session you will just see an abstract graph object that lives in your
 desired architecture.
 
-## Basic tools
-We will take a look at the basic calculating units and operations.
-
-### arrays/tensors
+### Graph or not a graph
 You will always need **Tensors/Arrays**. So let's start with the smallest 
 non-trivial example: A tensor of rank 2; Or: A Matrix.
 
@@ -145,11 +142,12 @@ Tensorflow node value:
 
 As Watson would perceive the Tensorflow node is completely different to its 
 value. Like I mentioned tensorflow creates a abstract graph object. We can 
-build it over python and can evaluate it in a tensorflow session. 
-- The first printout `Tensorflow node` is a representation of the abstract 
-node of the computation graph that was build at the initialization.  
-- The second printout `Tensorflow node value` is the value of the node that 
-was assigned with that computation. It was evaluated in a tensorflow session.
+build a computation graph via python using tensorflow and can evaluate the 
+nodes value assigned to the current computation in a tensorflow session. 
+- `Tensorflow node` is a representation of the abstract 
+node of the computation graph that was build at the initialization step.  
+- `Tensorflow node value` is the value of the node that 
+was assigned to this computation. It was evaluated in a tensorflow session.
 
 To make that clear please analyse the outcome of the next example. We will 
 now add up 2 matrices.
