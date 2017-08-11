@@ -257,7 +257,7 @@ mathematical formula.
 
 Let's go to a tensor of rank zero. A scalar.
 
-Everybody knows the derivation of $x^{2}+1$ we all know the chain rule and 
+Everybody knows the derivation of $x ^{2} + 1$ we all know the chain rule and 
 the basic patterns of building a derivation. Python for example is unaware 
 of this principle unfortunally.
 
