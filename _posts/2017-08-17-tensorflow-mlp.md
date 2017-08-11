@@ -188,12 +188,7 @@ Our nodes seem to represent $x ^{2} + 1$ and $2x$
 
 ![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_f.png) ![dx](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_dx.png)
 
-You can also start your
-```shell
-florens@neurocat:~codefolder$  cd lulu
-
-```
-
+tensorboard terminal befehl
 
 I hope you understood the basic concept of namescoping and got to know a 
 little more about the power of tensorflow and the advantages of the graph 
@@ -206,3 +201,23 @@ top of that we will, lazy as we are, skip to thing about backpropagation or
 gradient descent, because tensorflow is smart enough to do that for us.
 
 Have a great code. See you in the next tutorial.
+
+### Advanced Features
+#### Derivation
+#### GPU contact
+Image with and without, maybe time comparison.
+#### Building neural net
+#### Visual debugging
+Give example.
+
+Always 
+trying to find out why numpy isn't able to letting tensors flow without 
+boundarys.
+
+##Knoten über namen finden
+## Advanced Namescoping
+## Loops over namescopes, play around maybe create nice graph pattern 
+    without use
+## Save Restore
+## Mystery Layer
+## Partially connected layer
