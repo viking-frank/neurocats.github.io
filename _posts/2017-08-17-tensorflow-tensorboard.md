@@ -32,18 +32,22 @@ processor for visual input. When you build a huge computation graph it is
 often easier to just look if every connection in the graph is established 
 like you wanted visually then to search for a mistake in your code. Our 
 visual processing is way faster in that manner. On top of that its very cool
-to have a build in visualisation tool without calling e.g. matplotlib. There
-all your needed data can be provided e.g. lossfunction, weight density, or 
-embeddings from your trainingdata. You get a more efficient understanding 
-of your model reviewing your code from a second perspective.
+to have a build in visualisation tool without calling e.g. matplotlib. 
+Tensorboard provides the visualization of the most important measures in 
+machine learning e.g. lossfunction, weight density, or embeddings from your 
+trainingdata. You get a more efficient understanding of your model reviewing
+your code from a second visual perspective.
 
-Please don't confuse it. I also code examples that use matplotlib. 
-Tensorboard is not always the best descision just because it's build in. 
-Always use the tools that fit best for your purpose.
+Don't get me wrong. I also code examples that use matplotlib. Tensorboard is
+not always the best descision just because it's build in. Always use the 
+tools that fit best for your purpose.
 
 ## Symbolic derivation
 ![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_f.png) ![dx](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_dx.png)
 
+![der1](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_1.png)
+bla bla blub
+![der2](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_2.png)
 
 ### Advanced Features
 #### Derivation
