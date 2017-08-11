@@ -188,6 +188,15 @@ Our nodes seem to represent $x ^{2} + 1$ and $2x$
 
 ![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_f.png) ![dx](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_dx.png)
 
+tensorboard terminal befehl
+
+I hope you understood the basic concept of namescoping and got to know a 
+little more about the power of tensorflow and the advantages of the graph 
+representation. I hope you like the design of tensorboard and understood the
+basic usage and are able to find opportunities to use it.
+
+Have a great code. See you in the next tutorial.
+
 ### Advanced Features
 #### Derivation
 #### GPU contact
