@@ -61,8 +61,8 @@ use.
 
 Python is loved by the scientific community because of the variety of 
 scientific computing packages e.g. **numpy**, scipy. This gives the 
-developer the beauty of using python syntax by easily providing mathematical 
-tools e.g. matrix computation.
+developer the opportunity of mathematical tools e.g. matrix computation, in 
+the elegant style of python.
  
 
 ### Tensorflow
@@ -70,41 +70,41 @@ tools e.g. matrix computation.
 **- tensorflow.org**
 
 Tensorflow is a C++ library. In detail think of tensorflow as an API. With a
-python interface. It is fast, can communicate with the GPU and can therefore
-parallelize computations. Furthermore tensorflow has a more general 
+python interface. It is fast, can give you access to GPU computation and can 
+parallelize computations. Considering tensorflow has a more general 
 respresentation of a computation. It is able to compute a symbolical 
 derivative of a mathematical function and knows which part of the 
-computation can work in parallel.  
-We will elaborate on that in more detail in this tutorial.
+computation can work in parallel. 
+
+Have a look at the [Whitepaper](http://download.tensorflow.org/paper/whitepaper2015.pdf) 
+if you can't wait to know how all that's done.
 
 ### Conclusion
-What we are doing basically is using pythons power of elegantly integrating 
-systems with the tensorflow library (via python API). We are communicating 
-with the GPU over tensorflow controlled by python. We are combining easy to 
-use python with fast but complicated C++ and taking the best properties 
-respectively.
+Basically what we are doing is using pythons integrating 
+systems by integrating the use of tensorflow(via python API). We are 
+communicating with the GPU over tensorflow controlled by python. We are 
+combining easy to use python with fast but complicated written C++ and taking 
+the best properties respectively.
 
 ## Tensorflow philosophy
-I will give an overview how tensorflow calculates and give a practical 
+I will give an overview how tensorflow calculates and will give a practical 
 example of the concrete difference to pure python in the next section.
 
 ### It's all about computation graphs
-One field in theoretical computer science represents mathematical 
-operations in a graph. Tensorflow is a tool where you can build computation 
-graphs and provides functions like derivation that makes the use of an 
-formula easier. Tensorflow provides nodes that you can feed with numpy 
-values and gives the possibility to ask for each nodes value given the input
-(or constant).
+One field in theoretical computer science focus on representing mathematical 
+operations in a graph. Tensorflow is a tool where you can build 
+computation graphs and provides functions like derivation that makes the use
+of an formula easier. Tensorflow provides nodes that you can feed with numpy 
+objects and gives the possibility to evaluate each nodes value given the 
+input (or constant).
 
 Never forget. You are building a graph. When you want to evaluate a variable
 (graph node) you can only do it in a so called 'tensorflow session'. Outside
-such a session you will just see an abstract graph build in your desired 
-architecture.
+such a session you will just see an abstract graph object that lives in your
+desired architecture.
 
 ## Basic tools
-We will take a look at the basic calculating units and operations. Always 
-trying to find out why numpy isn't sufficient for 
-> letting tensors flow.
+We will take a look at the basic calculating units and operations.
 
 ### arrays/tensors
 You will always need **Tensors/Arrays**. So let's start with the smallest 

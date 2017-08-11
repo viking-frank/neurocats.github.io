@@ -49,3 +49,7 @@ Image with and without, maybe time comparison.
 #### Building neural net
 #### Visual debugging
 Give example.
+
+Always 
+trying to find out why numpy isn't able to letting tensors flow without 
+boundarys.
