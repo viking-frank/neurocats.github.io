@@ -198,6 +198,9 @@ Starting TensorBoard b'47' at http://0.0.0.0:6006
 Unfold you scalar plots in the `SCALARS` section or view the graph by 
 clicking on `GRAPHS`.
 
+If you like to know more [Tensorflow](https://www.tensorflow.org/get_started/summaries_and_tensorboard)
+provides some tutorials themself.
+
 I hope you understood the basic concept of namescoping and got to know a 
 little more about the power of tensorflow and the advantages of the graph 
 representation. I hope you like the design of tensorboard and understood the

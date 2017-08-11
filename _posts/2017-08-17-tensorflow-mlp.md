@@ -12,7 +12,8 @@ mathjax: true
 # Basic Neural Network
 ## Introduction
 I assume the reader to have a basic knowledge about neural networks. I will 
-just explain how to build one with tensorflow. Not what a neural network is.
+just explain how to build one with tensorflow. I will not explain what a 
+neural network is.
 
 ### Advanced Features
 #### Derivation
