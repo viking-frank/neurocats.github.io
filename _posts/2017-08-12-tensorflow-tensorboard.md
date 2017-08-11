@@ -208,7 +208,7 @@ basic usage and are able to find opportunities to use it.
 
 In the next tutorial we will create a MLP. You will learn a playful 
 handeling with namescopes and another example of the use of summaries. On 
-top of that we will, lazy as we are, skip to thing about backpropagation or 
+top of that we will, lazy as we are, skip to think about backpropagation or 
 gradient descent, because tensorflow is smart enough to do that for us.
 
 Have a great code. See you in the next tutorial.

@@ -15,22 +15,11 @@ I assume the reader to have a basic knowledge about neural networks. I will
 just explain how to build one with tensorflow. I will not explain what a 
 neural network is.
 
-### Advanced Features
-#### Derivation
-#### GPU contact
-Image with and without, maybe time comparison.
-#### Building neural net
-#### Visual debugging
-Give example.
+Loops over namescopes, play around
 
-Always 
-trying to find out why numpy isn't able to letting tensors flow without 
-boundarys.
-
-##Knoten über namen finden
-## Advanced Namescoping
-## Loops over namescopes, play around maybe create nice graph pattern 
-    without use
+## Building neural net
+## Visual debugging - Give example.
+##Knoten über namen finden - Advanced Namescoping
 ## Save Restore
 ## Mystery Layer
 ## Partially connected layer
