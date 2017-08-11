@@ -135,37 +135,62 @@ In more detail:
 seems to make sense.
 
 Only thing left is to put everything in a tensorflow session and evaluate 
-the assinged value of the nodes when we feed x with a test set.  
-Thats exactly what we are doing. Because after we formally merged out 
-summary nodes, for usability purpose...
+the assinged value of the nodes when we feed x with a test set. Thats 
+exactly what we are doing. Because after we formally merged our summary 
+nodes (for usability purpose)...
 
 ```python
 # for tensorboard usability just merge all summaries into one node
 merged = tf.summary.merge_all()
 ```
-... we have our head free for a tensorflow session
+... we have our head free for a tensorflow session:
 ```python
-
+# create a tensorflow session
+with tf.Session() as sess:
+    # create a writer for tensorboard
+    writer = tf.summary.FileWriter('./graphs', sess.graph)
 ```
-
-```python
-
-```
-
-```python
-
-```
-
-```python
-
-```
+You may remember that pattern if you studied my last tutorial. We are 
+opening a session and a writer for tensorboard. However now comes the tricky
+part. I want to loop over a testset (Numbers between -7 and 7 with stepsize 
+0.001) and summarize the node values from `x^2+1` and `2x` for tensorboard 
+visualization. The considerate reader will understand that `2x` may not be 
+$ 2x $, because we just called the tensorflow gradient computation. We don't
+know the outcome yet. We are just hoping that 2x will be the outcome.
 
 ```python
-
+# create a tensorflow session
+with tf.Session() as sess:
+    # create a writer for tensorboard
+    writer = tf.summary.FileWriter('./graphs', sess.graph)
+    # loop through a set of points to draw a graph
+    for i in np.arange(-7, 7, 0.001).tolist():
+        # allocate values to the graph nodes
+        summary, node1, node2 = sess.run(
+            [merged, xPow2Plus1, grad],
+            feed_dict={
+                # feed x with your points from testset
+                x: np.array([i])
+            })
+        # writer takes summary and integer for scalar input
+        writer.add_summary(summary, i * 1000)
+# don't forget to close your poor busy writer
+writer.close()
 ```
+As you can see I feed it with numpy objects. I looped over the testset that 
+of numpy's arange. Activated the nodes I'm most interested in. And add the 
+summary to out tensorboard writer. Note that I multiplied our second 
+parameter for the summary with 1000. Thats just convenience because a 
+integer it needed.
 
+Take a look at the graphs. Seems like everything turned out fine:
+$x ^{2} + 1$
 
-![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_f.png) ![dx](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_dx.png)
+![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_f.png) 
+
+$2x$
+
+![dx](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_dx.png)
 
 ![der1](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_1.png)
 bla bla blub
