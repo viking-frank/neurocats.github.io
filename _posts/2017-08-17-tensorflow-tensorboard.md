@@ -188,13 +188,15 @@ Our nodes seem to represent $x ^{2} + 1$ and $2x$
 
 ![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_f.png) ![dx](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/der_dx.png)
 
-You can also start your
+You can also start your tensorboard deamon with...
 ```shell
 florens@neurocat:~/bla/codefolder$ tensorboard --logdir="./graphs"
 Starting TensorBoard b'47' at http://0.0.0.0:6006
 (Press CTRL+C to quit)
 ```
-
+...and navigate with a webbrowse to [http://0.0.0.0:6006](http://0.0.0.0:6006).
+Unfold you scalar plots in the `SCALARS` section or view the graph by 
+clicking on `GRAPHS`.
 
 I hope you understood the basic concept of namescoping and got to know a 
 little more about the power of tensorflow and the advantages of the graph 
