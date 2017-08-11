@@ -25,6 +25,10 @@ other way round. Please refer to the following documentations:
 - [tensorflow docs](https://www.tensorflow.org/api_docs/python/)
 
 ## Python, Numpy, Tensorflow?
+![python](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/python-logo.png)
+![python](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/numpy.jpg)
+![python](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/tensorflow.png)
+
 We first have to make clear, what is there for mathematical programming. 
 What is used for which purpose? Which Problems are more efficiently solved 
 with which tool?
@@ -213,34 +217,37 @@ tfMatrix2 = tf.constant(npMatrix2, dtype=tf.float32, name="tfMatrix2")
 tfResult = tf.add(tfMatrix, tfMatrix2, name="tfResult")
 ```
 Notice that every seemingly variable initialization step is a birth of a 
-node in the computation graph. You pass it the properties, even a name.
+node in the computation graph. You feed it with the properties/parameter, 
+even a name.
 
 2. Execute the actual computation in a tensorflow session.
 ```python
 # Starting the session
 with tf.Session() as sess:
-    # Initialize all variables
+    # initialize all variables
     sess.run(tf.global_variables_initializer())
-    # Providing the results in tensorboard (a visualization tool)
+    # provide the results for tensorboard (a visualization tool)
     writer = tf.summary.FileWriter('./graphs', sess.graph)
-    # Calculate the value of a certain node
+    # evaluate the value of a certain node
     node = sess.run(tfResult)
     
-    # calculate the value of any node of the computation graph
+    # evaluate the value of any node of the computation graph
     sumand1, sumand2 = sess.run([tfMatrix, tfMatrix2])
 writer.close()
 ```
 Computation graph:  
-![ex_II](https://github.com/f37/f37.github.io/blob/master/assets/tensorflow/ex_II.png?raw=true)
+![ex_II](https://github.com/f37/f37.github.io/blob/master/assets/tensorflow/ex_II.png)
 
 As seen in the picture of the computation graph you have created 3 nodes 
 (summand, summand, sum). We can ask for every assigned value for that given 
-computation in every node. Tensorflow will calculate it over a 
-C++ API, not with native python like in the numpy case.
+computation in every node. Tensorflow will calculate it via C++ API, not 
+with native python like in the numpy case.
 
 I created that graph with tensorboard. Its a tool that converts
-so called tensorflow summaries into a visualization. (With that there arises 
-namescoping, building summaries etc. way down below.)
+so called tensorflow summaries into a visualization. With that there arises 
+namescoping, building summaries etc. I will elaborate on that in the next 
+section while I show you that tensorflow can compute symbolic derivations, 
+impossible for pure python.
 
 
 ### Advanced Features
