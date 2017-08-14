@@ -20,7 +20,7 @@ label provided.
 
 Let's start right away.
 
-## computation graph
+## Code
 First we obviously have to import tensorflow and numpy. Additionally we will
 use matplotlib for see how well we approximated sinus by comparing the outcome
 of the network with the original function visually.
