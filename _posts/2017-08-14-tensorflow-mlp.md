@@ -20,7 +20,7 @@ label provided.
 
 Let's start right away.
 
-## Code
+## computation graph
 First we obviously have to import tensorflow and numpy. Additionally we will
 use matplotlib for see how well we approximated sinus by comparing the outcome
 of the network with the original function visually.
@@ -30,6 +30,8 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 ```
+
+### Layer
 
 We also need a placeholder for our input unit.
 ```python
@@ -98,6 +100,11 @@ with tf.name_scope("Output"):
     tf.summary.histogram("W", W)
     tf.summary.histogram("b", b)
 ```
+Our first look at the namescopes lets us assume that we build a graph like 
+that:
+
+![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp1.png)
+
 The list `layer` represents the number of units in each layer of the network.
 - 1 input,
 - 2 x 50 hidden,
@@ -107,8 +114,51 @@ We create tensorflow variables that needs to be assigned with a initial
 value. `tf.matmul` obviously performs a matrix multiplication and `tf.nn.relu`
 represents the **rectified linear unit** activation function.  
 Note: We also could have taken sigmoid (`tf.nn.sigmoid`) or any other 
-activation function. Each layer contains a summary operation (for 
-histograms) and the output layer has no activation function for convenience.
-Everything else is equal for every layer. Let's have a look what we created:
+activation function. 
 
-![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp1.png)
+![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_layer.png)
+
+Each layer contains a summary operation (for 
+histograms) and the output layer has no activation function for convenience.
+Everything else is equal for every layer.
+
+![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_output.png)
+
+The interested reader also may notice that the vertices of the graph contain
+information about the dimension of the operations. Please ignore the nodes 
+`loss` and `trainer` for. We will elaborate on that later in this tutorial. 
+We just first have to be sure that tensorflow understood what we wanted in out 
+loop.
+
+![hidden](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_hidden.png)
+
+This looks just perfect. Lets proceed with creating a loss for our little 
+network.
+
+### Loss & Training
+We have a beautiful computation right now, but in order to really 
+approximate something we need a loss function that tells the network how 
+he's done. We will make it easy for us and take the euclidean distance of 
+label and output.
+
+```python
+# loss function
+with tf.name_scope("Loss"):
+    # supervised input labels
+    with tf.name_scope("label"):
+        y = tf.placeholder(dtype=tf.float32, shape=[None, 1], name="y")
+    # euclidean distance as loss
+    with tf.name_scope("distance"):
+        loss = tf.subtract(out, y, name="difference")
+        loss = tf.abs(loss, name="absolute")
+        loss = tf.reduce_mean(loss)
+
+    # summarise scalar
+    tf.summary.scalar('loss', loss)
+```
+Note that the shape of y (our labels) also contains a `None`. So we can 
+take more then just one training data. The bigger the batch the faster you 
+compute but also the slower you will learn. Figure out your hyperparameters 
+by your own.  
+Lets see what we have build
+![hidden](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_loss.png)
