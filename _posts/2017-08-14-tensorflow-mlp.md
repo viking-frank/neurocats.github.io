@@ -15,7 +15,7 @@ I assume that the reader has a basic knowledge about neural networks. I
 will just explain how to build one with tensorflow. I will not explain what a 
 neural network is.
 
-We will approximate **sinus** as a toyexample. Here we have every possible 
+We will approximate **sinus** as a toy example. Here we have every possible 
 label provided.
 
 Let's start right away.
@@ -109,6 +109,6 @@ represents the **rectified linear unit** activation function.
 Note: We also could have taken sigmoid (`tf.nn.sigmoid`) or any other 
 activation function. Each layer contains a summary operation (for 
 histograms) and the output layer has no activation function for convenience.
-Everything else is equal for every layer. Let's have a look what we created
+Everything else is equal for every layer. Let's have a look what we created:
 
 ![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp1.png)
