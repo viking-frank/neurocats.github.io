@@ -161,4 +161,32 @@ take more then just one training data. The bigger the batch the faster you
 compute but also the slower you will learn. Figure out your hyperparameters 
 by your own.  
 Lets see what we have build
+
 ![hidden](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_loss.png)
+
+Looks nice, it compares the output with the label and calculates the 
+euclidean distance. It also calculates a mean for two reasons. First we want
+to have scalar values for the summary of the lossfunction. Second, remember
+that our placeholder for `x` and `y` are very flexible and could evaluate 
+multiple instances of the data set in one run.
+
+The last operation is very easy for a user but a masterpiece of the 
+developers of tensorflow. Look how I can command the network that it should 
+learn with respect to the lossfunction and the architecture:
+
+```python
+with tf.name_scope("trainer"):
+    train_op = tf.train.AdamOptimizer().minimize(loss)
+```
+
+That is also the explaination why `loss` and `trainer` sneaked inside the 
+graph representation of the previous samples. We just decide what our 
+lossfunction is that we want to minimize with the Adam Optimizer. Tensorflow
+automatically adapts the variables that influence the outcome via 
+backpropagation. In the last lesson we learned that tensorflow automatically
+can calculate gradients. This is way more exciting.  
+You can also decide which variables should be learnable and which not. This 
+would be too much for this tutorial.
+
+### Computation
+  
