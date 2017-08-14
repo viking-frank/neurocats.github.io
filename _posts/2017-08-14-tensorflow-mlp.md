@@ -189,4 +189,49 @@ You can also decide which variables should be learnable and which not. This
 would be too much for this tutorial.
 
 ### Computation
-  
+Before we start the tensorflow session let us get over with the bureaucracy.
+
+```python
+# for tensorboard usability just merge all summaries into one node
+summary_op = tf.summary.merge_all()
+
+# operation for initialize variables
+init_op = tf.global_variables_initializer()
+
+# determine training length and batch size
+train_len = 5000
+batch = 2000
+```
+Like in the last tutorials we merge all summaries. Additionally, this time 
+we use a global variable initializer. If we don't do that we cant work with 
+our model. Imagine it similar to a placeholder where we first have to feed 
+values inside to get a reasonable output. Furthermore, we introduce 
+`train_len` and `batch` which represent the epochs of training and the 
+batchsize for our upcoming tensorflow session:
+
+```python
+with tf.Session() as sess:
+    # run operation for variable initialization
+    sess.run(init_op)
+    # create a writer
+    writer = tf.summary.FileWriter("./graphs", sess.graph)
+    for i in range(train_len):
+        # randomly train with trainingset
+        x_data = np.float32(np.random.uniform(-1, 1, (1, batch))).T
+        y_data = np.float32(np.sin(4 * x_data))
+
+        # run training operation
+        sess.run(train_op, feed_dict={x: x_data, y: y_data})
+
+        # summarize
+        summary = sess.run(summary_op, feed_dict={x: x_data, y: y_data})
+        writer.add_summary(summary, i)
+```
+
+Basically we are execute out initialization operation `init_op`, creating a 
+writer and loop over a random data set of sinus values between -1 and 1. For
+that we are executing the training operation `train_op` by providing it with
+labeled data. In the end we are doing summaries that we can view here
+
+![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_loss_tb.png)
+ 
