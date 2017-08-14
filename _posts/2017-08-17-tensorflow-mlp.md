@@ -110,3 +110,5 @@ Note: We also could have taken sigmoid (`tf.nn.sigmoid`) or any other
 activation function. Each layer contains a summary operation (for 
 histograms) and the output layer has no activation function for convenience.
 Everything else is equal for every layer. Let's have a look what we created
+
+![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp1.png)
