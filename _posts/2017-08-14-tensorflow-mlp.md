@@ -231,7 +231,17 @@ with tf.Session() as sess:
 Basically we are execute out initialization operation `init_op`, creating a 
 writer and loop over a random data set of sinus values between -1 and 1. For
 that we are executing the training operation `train_op` by providing it with
-labeled data. In the end we are doing summaries that we can view here
+labeled data. In the end we are doing summaries that we can view here:
 
 ![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_loss_tb.png)
- 
+
+We also created histograms to measure the weights:
+
+![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_hist.png)
+
+These can be very helpful for debugging your model. There is no theory 
+around it. However if you see that all your weights are zero, maybe you made
+a wrong initialization. If you notice that your bias or weights jumping 
+around without convergence maybe you took to less or to little layer. You 
+have to develop a feeling for how they should look like. Start with easy 
+models and play around to get bigger.
