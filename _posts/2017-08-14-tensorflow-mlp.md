@@ -229,9 +229,10 @@ with tf.Session() as sess:
 ```
 
 Basically we are execute out initialization operation `init_op`, creating a 
-writer and loop over a random data set of sinus values between -1 and 1. For
-that we are executing the training operation `train_op` by providing it with
-labeled data. In the end we are doing summaries that we can view here:
+writer and loop over a uniformly random data set of labeled sinus values 
+between -1 and 1. For that we are executing the training operation 
+`train_op` by providing it with labeled data. In the end we are doing 
+summaries that we can view here:
 
 ![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_loss_tb.png)
 
@@ -245,3 +246,35 @@ a wrong initialization. If you notice that your bias or weights jumping
 around without convergence maybe you took to less or to little layer. You 
 have to develop a feeling for how they should look like. Start with easy 
 models and play around to get bigger.
+
+### Inference
+Now we want to see how our trained model is doing with its task. Here we 
+basically have to feed our computation graph with x values and compare the 
+labels in a easy, understandable way.
+```python
+    # inference
+    # check if everything worked out fine by visualizing equidistant testpoints
+    samples = 1000
+    x_data = np.float32(np.linspace(-1, 1, samples))[None, :].T
+    y_data = np.float32(np.sin(4 * x_data))
+    _out = sess.run(out, feed_dict={x: x_data})
+writer.close()
+
+# plot
+fig = plt.figure(1)
+ax1 = fig.add_subplot(111)
+ax1.plot(y_data, 'g-')
+ax1.plot(_out, 'y--')
+ax1.plot(np.subtract(y_data, _out), 'r--')
+ax1.set_title("Sinus")
+ax1.grid(True)
+plt.show()
+```
+Like you can see we are just feeding out `x` with `x_data`, no labels needed
+this time. Our validation set are 1000 equidistant labeled sinus values. 
+Note: we never actually trained on that set. Before we randomly took our 
+choice. Our comparison with matplotlib looks like that:
+
+![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_plt.png)
+
+I know not too impressive but a proof of concept.
