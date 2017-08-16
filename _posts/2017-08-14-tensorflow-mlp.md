@@ -15,14 +15,14 @@ I assume that the reader has a basic knowledge about neural networks. I
 will just explain how to build one with tensorflow. I will not explain what a 
 neural network is.
 
-We will approximate **sinus** as a toy example. Here we have every possible 
-label provided.
+We will approximate **sinus** as a toy example. Luckily we have every possible 
+label provided because the function is well known.
 
 Let's start right away.
 
 ## Code
 First we obviously have to import tensorflow and numpy. Additionally we will
-use matplotlib for see how well we approximated sinus by comparing the outcome
+use matplotlib to see how well we approximated sinus by comparing the outcome
 of the network with the original function visually.
 
 ```python
@@ -33,7 +33,7 @@ import matplotlib.pyplot as plt
 
 ### Layer
 
-We also need a placeholder for our input unit.
+We also need a placeholder for our input the unit. Like in the last tutorial.
 ```python
 # initialize placeholder for data input
 with tf.name_scope("Input"):
@@ -41,8 +41,9 @@ with tf.name_scope("Input"):
 ```
 Notice that the first dimension of our placeholder assigns a `None`. This is
 a practical trick to allow working with batches. This just means that we 
-don't want to set fix how many data points we can put inside. So we can 
-input a vector of size (100, 1) and get 100 calculated values from the network.
+don't want to set fix how many data points we can feed inside this node. So we 
+can input a vector of size (N, 1) for $N \in  \mathbb{N}$ and get 100 
+calculated values from the network.
 
 If you want to take a look what happens when you print x...
 ```
