@@ -42,8 +42,9 @@ with tf.name_scope("Input"):
 Notice that the first dimension of our placeholder assigns a `None`. This is
 a practical trick to allow working with batches. This just means that we 
 don't want to set fix how many data points we can feed inside this node. So we 
-can input a vector of size (N, 1) for $N \in  \mathbb{N}$ and get 100 
-calculated values from the network.
+can input a vector of size (N, 1) for $N \in  \mathbb{N}$ and get N 
+calculated values from the network. Assuming the cache of your device is 
+sufficient.
 
 If you want to take a look what happens when you print x...
 ```
@@ -52,9 +53,9 @@ If you want to take a look what happens when you print x...
 ... you can see that the internal representation of the None is a `?`.
 
 To emphasize the computation graph representation of a calculation in the 
-following I will create our layers in a loop. Our network is relatively 
-small we could also do it by hand. However this can be as huge as you want 
-it to be
+following I will create the layers in a loop. The considered network is 
+relatively small we could also create it by hand. However this can be as 
+huge as you want it to be.
 
 ```python
 # think about the dimensions of your neural net (trial & error)
@@ -115,7 +116,7 @@ We create tensorflow variables that needs to be assigned with a initial
 value. `tf.matmul` obviously performs a matrix multiplication and `tf.nn.relu`
 represents the **rectified linear unit** activation function.  
 Note: We also could have taken sigmoid (`tf.nn.sigmoid`) or any other 
-activation function. 
+activation function that pops into your mind. 
 
 ![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_layer.png)
 
@@ -128,7 +129,7 @@ Everything else is equal for every layer.
 The interested reader also may notice that the vertices of the graph contain
 information about the dimension of the operations. Please ignore the nodes 
 `loss` and `trainer` for. We will elaborate on that later in this tutorial. 
-We just first have to be sure that tensorflow understood what we wanted in out 
+First we have to make sure that tensorflow understood what we wanted in the 
 loop.
 
 ![hidden](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_hidden.png)
@@ -139,8 +140,8 @@ network.
 ### Loss & Training
 We have a beautiful computation right now, but in order to really 
 approximate something we need a loss function that tells the network how 
-he's done. We will make it easy for us and take the euclidean distance of 
-label and output.
+it has done so far. We will make it easy for us and take the euclidean distance
+of label and output.
 
 ```python
 # loss function
@@ -158,9 +159,9 @@ with tf.name_scope("Loss"):
     tf.summary.scalar('loss', loss)
 ```
 Note that the shape of y (our labels) also contains a `None`. So we can 
-take more then just one training data. The bigger the batch the faster you 
-compute but also the slower you will learn. Figure out your hyperparameters 
-by your own.  
+process more then just one label when we need to. Figure out your 
+hyperparameters by your own. There is no theory behind it. Just experience. 
+Always remember that an AI Engineer is like a slot machine addict!  
 Lets see what we have build
 
 ![hidden](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_loss.png)
@@ -172,7 +173,7 @@ that our placeholder for `x` and `y` are very flexible and could evaluate
 multiple instances of the data set in one run.
 
 The last operation is very easy for a user but a masterpiece of the 
-developers of tensorflow. Look how I can command the network that it should 
+developers of tensorflow. Look how I can command to the network that it should 
 learn with respect to the lossfunction and the architecture:
 
 ```python
@@ -190,7 +191,7 @@ You can also decide which variables should be learnable and which not. This
 would be too much for this tutorial.
 
 ### Computation
-Before we start the tensorflow session let us get over with the bureaucracy.
+Before we start the tensorflow session let us bring behind us the bureaucracy.
 
 ```python
 # for tensorboard usability just merge all summaries into one node
@@ -251,7 +252,9 @@ models and play around to get bigger.
 ### Inference
 Now we want to see how our trained model is doing with its task. Here we 
 basically have to feed our computation graph with x values and compare the 
-labels in a easy, understandable way.
+labels in a easy, understandable way. Note that the following is still in 
+the same session. Otherwise the variables wouldn't be saved. Advanced saving
+and restoring we will see in the next tutorial.
 ```python
     # inference
     # check if everything worked out fine by visualizing equidistant testpoints
@@ -278,4 +281,6 @@ choice. Our comparison with matplotlib looks like that:
 
 ![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_plt.png)
 
-I know not too impressive but a proof of concept.
+I know not too impressive but a proof of concept. Green represents the 
+original function, yellow shows how the network behaved in the validation 
+set and red shows the difference between both.
