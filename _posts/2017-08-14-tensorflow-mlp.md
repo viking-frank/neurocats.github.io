@@ -33,13 +33,13 @@ import matplotlib.pyplot as plt
 
 ### Layer
 
-We also need a placeholder for our input the unit. Like in the last tutorial.
+We also need a placeholder for the input the unit. Like in the last tutorial.
 ```python
 # initialize placeholder for data input
 with tf.name_scope("Input"):
     x = tf.placeholder(dtype=tf.float32, shape=[None, 1], name="x")
 ```
-Notice that the first dimension of our placeholder assigns a `None`. This is
+Notice that the first dimension of the placeholder assigns a `None`. This is
 a practical trick to allow working with batches. This just means that we 
 don't want to set fix how many data points we can feed inside this node. So we 
 can input a vector of size (N, 1) for $N \in  \mathbb{N}$ and get N 
@@ -102,7 +102,7 @@ with tf.name_scope("Output"):
     tf.summary.histogram("W", W)
     tf.summary.histogram("b", b)
 ```
-Our first look at the namescopes lets us assume that we build a graph like 
+The first look at the namescopes lets us assume that we build a graph like 
 that:
 
 ![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp1.png)
@@ -134,7 +134,7 @@ loop.
 
 ![hidden](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_hidden.png)
 
-This looks just perfect. Lets proceed with creating a loss for our little 
+This looks just perfect. Lets proceed with creating a loss for the little 
 network.
 
 ### Loss & Training
@@ -158,7 +158,7 @@ with tf.name_scope("Loss"):
     # summarise scalar
     tf.summary.scalar('loss', loss)
 ```
-Note that the shape of y (our labels) also contains a `None`. So we can 
+Note that the shape of y (labels) also contains a `None`. So we can 
 process more then just one label when we need to. Figure out your 
 hyperparameters by your own. There is no theory behind it. Just experience. 
 Always remember that an AI Engineer is like a slot machine addict!  
@@ -169,7 +169,7 @@ Lets see what we have build
 Looks nice, it compares the output with the label and calculates the 
 euclidean distance. It also calculates a mean for two reasons. First we want
 to have scalar values for the summary of the lossfunction. Second, remember
-that our placeholder for `x` and `y` are very flexible and could evaluate 
+that the placeholder for `x` and `y` are very flexible and could evaluate 
 multiple instances of the data set in one run.
 
 The last operation is very easy for a user but a masterpiece of the 
@@ -182,7 +182,7 @@ with tf.name_scope("trainer"):
 ```
 
 That is also the explaination why `loss` and `trainer` sneaked inside the 
-graph representation of the previous samples. We just decide what our 
+graph representation of the previous samples. We just decide what the 
 lossfunction is that we want to minimize with the Adam Optimizer. Tensorflow
 automatically adapts the variables that influence the outcome via 
 backpropagation. In the last lesson we learned that tensorflow automatically
@@ -206,10 +206,10 @@ batch = 2000
 ```
 Like in the last tutorials we merge all summaries. Additionally, this time 
 we use a global variable initializer. If we don't do that we cant work with 
-our model. Imagine it similar to a placeholder where we first have to feed 
+the model. Imagine it similar to a placeholder where we first have to feed 
 values inside to get a reasonable output. Furthermore, we introduce 
 `train_len` and `batch` which represent the epochs of training and the 
-batchsize for our upcoming tensorflow session:
+batchsize for the upcoming tensorflow session:
 
 ```python
 with tf.Session() as sess:
@@ -250,8 +250,8 @@ have to develop a feeling for how they should look like. Start with easy
 models and play around to get bigger.
 
 ### Inference
-Now we want to see how our trained model is doing with its task. Here we 
-basically have to feed our computation graph with x values and compare the 
+Now we want to see how the trained model is doing with its task. Here we 
+basically have to feed the computation graph with x values and compare the 
 labels in a easy, understandable way. Note that the following is still in 
 the same session. Otherwise the variables wouldn't be saved. Advanced saving
 and restoring we will see in the next tutorial.
@@ -275,9 +275,9 @@ ax1.grid(True)
 plt.show()
 ```
 Like you can see we are just feeding out `x` with `x_data`, no labels needed
-this time. Our validation set are 1000 equidistant labeled sinus values. 
+this time. The validation set contains 1000 equidistant labeled sinus values. 
 Note: we never actually trained on that set. Before we randomly took our 
-choice. Our comparison with matplotlib looks like that:
+choice. The comparison with matplotlib looks like that:
 
 ![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_plt.png)
 
