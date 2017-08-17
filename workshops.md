@@ -4,9 +4,6 @@ title: Workshops
 permalink: /workshops/
 ---
 
-- **Introduction to tensorflow** by Florens Greßner  
-to: Research & Development group  
-17/08/17
 - **Introduction to Reinforcement Learning** by Felix Assion  
 to: Research, Development & Management group  
 18/08/17
@@ -16,3 +13,8 @@ to: Research, Development & Management group
 
 
 Feel free to Sign in for a workshop by contacting miau@neurocat.ai.
+
+Past Workshops:
+- **Introduction to tensorflow** by Florens Greßner  
+to: Research & Development group  
+17/08/17
