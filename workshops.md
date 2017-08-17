@@ -14,7 +14,7 @@ to: Research, Development & Management group
 
 Feel free to Sign in for a workshop by contacting miau@neurocat.ai.
 
-Past Workshops:
+### Past Workshops:
 - **Introduction to tensorflow** by Florens Greßner  
 to: Research & Development group  
 17/08/17
