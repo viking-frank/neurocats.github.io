@@ -2,9 +2,9 @@
 layout: post
 comments: true
 title:  "Introduction to Tensorflow - 02 Tensorboard"
-excerpt: "While showing how to evaluate derivations from a tensorflow 
-computation graph I want to give the reader the basic tool for visualizing a
-model."
+excerpt: "Florens Greßner - While showing how to evaluate derivations from a 
+tensorflow computation graph I want to give the reader the basic tool for 
+visualizing a model."
 date:   2017-08-12
 mathjax: true
 ---
