@@ -1,9 +1,9 @@
 # Site settings
-title: Neurocat blog
+title: Frank Selensky blog
 email: 
-description: "Artificial Intelligence."
+description: "Blockchain stuff"
 baseurl: ""
-url: "http://neurocats.github.io"
+url: "http://viking-frank.github.io"
 github_username:  neurocats
 
 # Build settings
