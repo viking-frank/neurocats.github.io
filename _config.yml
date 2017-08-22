@@ -4,7 +4,7 @@ email:
 description: "Blockchain stuff"
 baseurl: ""
 url: "http://viking-frank.github.io"
-github_username:  neurocats
+github_username:  viking-frank
 
 # Build settings
 markdown: kramdown
