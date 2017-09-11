@@ -24,11 +24,11 @@ We call a hash function $H$ **collision-resistant**, if it is infeasible to find
 
 Notice, that collision-resistance does not mean, that there are not two different strings, which will hash to the same value. Since the input space is infinte while the output space is finite, a hash function can not be injective. So there are collisions, but your are not able to find them. 
 
-We call a hash function $H$ *hiding*, if when a secret value $r$ is choosen from a probability distribution that has *high min-entropy* (i.e the distribution is very spread out, and it is not predictable which output the random variable has), then given $ H(r \mVert x) $ it is infeasible to find $ x $. ( $ a \mVert b $ denote the concatenation of $ a $ and $ b $ )
+We call a hash function $H$ *hiding*, if when a secret value $r$ is choosen from a probability distribution that has *high min-entropy* (i.e the distribution is very spread out, and it is not predictable which output the random variable has), then given $ H(r \Vert x) $ it is infeasible to find $ x $. ( $ a \Vert b $ denote the concatenation of $ a $ and $ b $ )
 
 Notice that the secret value $r$ is needed to ensure, that the input value for the hash fuction is in some sense very spread out.
 
-We call a hash function $H$ **puzzle-friendly**, if for every $n$-bit output value $y$, if $k$ is choosen from a probablility distribution with high min-entropy, then it is infreasible to find $x$ such that $ H(k || x)=y $ in significantly less time than $2^n$
+We call a hash function $H$ **puzzle-friendly**, if for every $n$-bit output value $y$, if $k$ is choosen from a probablility distribution with high min-entropy, then it is infreasible to find $x$ such that $ H(k \Vert x)=y $ in significantly less time than $2^n$
 
 With a puzzle friendly hash function we are able to construct a *search puzzle* which we will need later when trying to find consensus between nodes.
 
@@ -38,7 +38,7 @@ A **search puzzle** consists of
 * a **target set** $Y$ which is a subset of the value space of $H$.
 
 A **solution** to the search puzzle is a value $x$, such that:
-$$ H(z || x)\in Y $$
+$$ H(z \Vert x)\in Y $$
 
 The *puzzle-friendliness* of the hash function ensures that there is no shorter way or no more efficient way to solve the puzzle, than just trying.
 
