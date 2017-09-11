@@ -24,7 +24,7 @@ We call a hash function $H$ **collision-resistant**, if it is infeasible to find
 
 Notice, that collision-resistance does not mean, that there are not two different strings, which will hash to the same value. Since the input space is infinte while the output space is finite, a hash function can not be injective. So there are collisions, but your are not able to find them. 
 
-We call a hash function $H$ *hiding*, if when a secret value $r$ is choosen from a probability distribution that has *high min-entropy* (i.e the distribution is very spread out, and it is not predictable which output the random variable has), then given $ H(r || x) $ it is infeasible to find $ x $. ( $ a || b $ denote the concatenation of $a$ and $b$)
+We call a hash function $H$ *hiding*, if when a secret value $r$ is choosen from a probability distribution that has *high min-entropy* (i.e the distribution is very spread out, and it is not predictable which output the random variable has), then given $ H(r \mVert x) $ it is infeasible to find $ x $. ( $ a \mVert b $ denote the concatenation of $ a $ and $ b $ )
 
 Notice that the secret value $r$ is needed to ensure, that the input value for the hash fuction is in some sense very spread out.
 
