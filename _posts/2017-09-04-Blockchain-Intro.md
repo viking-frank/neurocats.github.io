@@ -7,8 +7,6 @@ date:   2017-09-12
 mathjax: true
 ---
 
-# blockchain Technology
-
 ## Cryptographic Hash Function
 
 Since the whole concept of a blockchain is strongly based on *hash functions* , we'll start with defining these.
