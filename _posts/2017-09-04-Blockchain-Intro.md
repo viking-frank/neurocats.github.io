@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title:  "Introduction to blockchain Technology"
+title:  "Introduction to blockchain technology"
 excerpt: "This post gives a brief introduction to the blockchain technologies as they are used in cryptocurrencies like bitcoin."
 date:   2017-09-12
 mathjax: true
