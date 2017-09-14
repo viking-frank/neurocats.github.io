@@ -1,12 +1,14 @@
-<!-- --- -->
-<!-- layout: post -->
-<!-- comments: true -->
-<!-- title:  "The bitcoin scripting language" -->
-<!-- excerpt: "This post takes a deeper look at bitcoin transactions and th bitcoin scripting language." -->
-<!-- date:   2017-09-12 -->
-<!-- mathjax: true -->
-<!-- --- -->
+---
+layout: post
+comments: true
+title:  "The bitcoin scripting language and smart contracts"
+excerpt: "This post takes a deeper look at bitcoin transactions and the bitcoin scripting language, leading to simple smart contracts."
+date:   2017-09-12
+mathjax: true
 
+---
+
+## script
 Last time we introduced transactions. We defined them to have inputs and outputs, where there are *public-keys* specified in the *outputs* and *private-key-signatures* in the inputs. In bitcoin it is slightly different than that. Its much more powerful. So Lets take a look at a almost raw bitcoin transaction (a real raw bitcoin transaction is not human readable, this is the information from a bitcoin transaction in a more pretty json format. This is the output of the <https://blockexplorer.com> api): 
 
 ```json
@@ -388,3 +390,32 @@ A cool thing we can now accomplish is a *contract* directly in the Blockchain. I
 
 These examples are a form of *smart-contracts* in the general/traditional way, since they are contracts which are technically enforced.
 Since bitcoins script is very small, the possibilities are limited, but yet powerful. Other cryptocurrencies/blockchain systems are using much more powerful languages. And can therefore build really complex smart contract. 
+
+## Other blockchain applications
+Beside the cases we mentioned above, there are a lot of other applications you can use the blockchain-technology. For example you can build 
+
+* multi-party-lotteries
+* prediction-markets
+* exchanges
+* dynamic name sever 
+
+all in a decentralized manner, using blockchain technologie. You could implement all of these use-cases by using the ability to write data into the bitcoin-blockchain and building your application on top of bitcoin. It turns out, that it is much simpler and more stable to build yout own cryptocurrency implementing all the instructions you need in the new scripting language. 
+There are a lot of *alternative currencies* called *altcoins*, which implement new or other features:
+
+* *namecoin* - dns server
+* *peercoin* - proof-of-stake
+* *zerocoin/zerocash* - introducing zero-knowledge protocols for transactions
+* *monero* - mixin transactions
+
+
+## Ethereum - the cryptocurrency where you could build any application.
+
+Building a new *cryptocurrency* for every application can be anoying, especially, since you would have to bootstrap the currency and accomplish mining power and miners to get it secure and stable. 
+
+The main idea of *Ethereum* is to hava *cryptocurrency-system* where you can build all applications on top, you want to, now or in the future. To accomplish this, the programming language of *Ethereum* is *turing-complete*, so you can implement arbitrary complex functions with it. 
+
+In *Ethereum* the term *contract* refers to a programm, which lives on the *blockchain*. Everybody can write *contracts* and upload them to the *blockchain*. There the program can act by itself, users can call procedures of the *contract* and the contract itself can send or receive money, you can specify any behaviour you want to. The state of all *contracts* is maintained and aggreed to by all nodes in the blockchain. 
+
+Since you may have noticed, bitcoins *script* was by design nnot *turing-complete* to avoid *infinite-loops*. Now in Ethereum this could happen. To prevent *contracts* (and the miners executing them) from beeing stuck in a infinite-loop, *Ethereum* introduces *gas* which a *contract* needs to get executed. *gas* is simply bought using the currency of *Ethereum*. Every instruction consumes *gas*. If a *contract* runs out of *gas* it's execution is stopped.
+
+Despite there are some difficulties, which have to be solved, *Ethereum* and in general *multi-pupose-blockchain-technologies* are very promising. There will be difinitely a blog post, where we take an in depth look at *Ethereum*.
