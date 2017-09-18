@@ -323,8 +323,7 @@ Let's take a look of sending coins to 2 of 3 multisig script address:
 
 The ```scriptPubKey``` is very simple and looks like this:
 
-```scriptPubKey```:
-
+*scriptPubKey*:
 ```
 OP_HASH160
 <Hash of the redeem script>
@@ -333,7 +332,7 @@ OP_EQUAL
 
 The ```scriptSig```, together with the ```redeem_script``` is relatively complicated, but that is nothing the sender has to care about. He only needs the hash of the redeem script.
 
-```scriptSig```:
+*scriptPubKey*:
 
 ```
 OP_0
@@ -342,7 +341,7 @@ OP_0
 <redeem script as data>
 ```
 
-```redeem_script```:
+*redeem_script*:
 
 ```
 OP_2
